@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeManagement.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace CoffeeManagement
         public f_Admin()
         {
 
-            InitializeComponent();
+            InitializeComponent();  
 
             LoadAccountList();
         }
@@ -28,20 +29,9 @@ namespace CoffeeManagement
         void LoadAccountList()
         {
 
-            string connectionsSTR = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyQuanCafe;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectionsSTR);
-            string query = "SELECT * FROM Account";
-            connection.Open();
-            SqlCommand command = new SqlCommand(query, connection);
-
-            DataTable data = new DataTable();
-
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-
-            adapter.Fill(data);
-            connection.Close();
-
-            dtgvAccount.DataSource = data;
+            string query = "EXEC USP_GetAccountByUserName @userName";
+            DataProvider provider = new DataProvider();
+            dtgvAccount.DataSource = provider.ExecuteQuery(query,new object[] {"K9" });
 
         }   
     }
