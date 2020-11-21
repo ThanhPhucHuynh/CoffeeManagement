@@ -30,9 +30,17 @@ namespace CoffeeManagement
         {
 
             string query = "EXEC USP_GetAccountByUserName @userName";
-            DataProvider provider = new DataProvider();
-            dtgvAccount.DataSource = provider.ExecuteQuery(query,new object[] {"K9" });
+            
+            dtgvAccount.DataSource = DataProvider.Instance.ExecuteQuery(query,new object[] {"staff" });
 
-        }   
+        }
+        void LoadFoodList()
+        {
+
+            string query = "select * from food";
+
+            dtgwFood.DataSource = DataProvider.Instance.ExecuteQuery(query);
+
+        }
     }
 }

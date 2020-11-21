@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CoffeeManagement.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,13 +35,35 @@ namespace CoffeeManagement
                 e.Cancel = true;
             }
         }
-
+        bool checkLogin(string usename, string password)
+        {
+            return AccountDAO.Instance.check_Login(usename,password);
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            f_TableManager f = new f_TableManager();
-            this.Hide();
-            f.ShowDialog(); // this Dialog is top mode 
-            this.Show();
+            string username = tbAccount.Text;
+            string password = tbPassword.Text;
+            if (checkLogin(username, password))
+            {
+                f_TableManager f = new f_TableManager();
+                this.Hide();
+                f.ShowDialog(); // this Dialog is top mode 
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Account or Password wrong!");
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
