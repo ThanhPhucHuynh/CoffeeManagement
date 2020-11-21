@@ -94,14 +94,14 @@
             // userInfoToolStripMenuItem
             // 
             this.userInfoToolStripMenuItem.Name = "userInfoToolStripMenuItem";
-            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.userInfoToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.userInfoToolStripMenuItem.Text = "User Info";
             this.userInfoToolStripMenuItem.Click += new System.EventHandler(this.userInfoToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // panel2
@@ -229,6 +229,7 @@
             // 
             // flpTable
             // 
+            this.flpTable.AutoScroll = true;
             this.flpTable.Location = new System.Drawing.Point(0, 42);
             this.flpTable.Name = "flpTable";
             this.flpTable.Size = new System.Drawing.Size(377, 396);
