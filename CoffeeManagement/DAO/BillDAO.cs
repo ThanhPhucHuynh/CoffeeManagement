@@ -30,11 +30,16 @@ namespace CoffeeManagement.DAO
             }
             return -1;
         }
-        public void CheckOut(int id, int discount, float totalPrice)
+        public void CheckOut(int id, int discount, float totalprice)
         {
-            string query = "UPDATE dbo.Bill SET dateCheckOut = GETDATE(), status = 1, " + "discount = " + discount + ", totalPrice = " + totalPrice + " WHERE id = " + id;
+            string query = "update dbo.bill set datecheckout = getdate(), status = 1, " + "discount = " + discount + ", totalprice = " + totalprice + " where id = " + id;
             DataProvider.Instance.ExecuteNonQuery(query);
         }
+        //public void CheckOut(int id)
+        //{
+        //    string query = "UPDATE dbo.Bill SET dateCheckOut = GETDATE(), status = 1 WHERE id = " + id;
+        //    DataProvider.Instance.ExecuteNonQuery(query);
+        //}
         public void InsertBill(int id)
         {
             DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @idTable", new object[] { id });

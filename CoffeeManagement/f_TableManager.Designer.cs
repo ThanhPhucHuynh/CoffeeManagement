@@ -37,8 +37,12 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ListViewBill = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel3 = new System.Windows.Forms.Panel();
-            this.nmSwitchTable = new System.Windows.Forms.NumericUpDown();
+            this.tbTotalPrice = new System.Windows.Forms.TextBox();
             this.btnSwitchTable = new System.Windows.Forms.Button();
             this.nmDiscount = new System.Windows.Forms.NumericUpDown();
             this.btnDiscount = new System.Windows.Forms.Button();
@@ -49,16 +53,11 @@
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.tbTotalPrice = new System.Windows.Forms.TextBox();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cbTable = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmSwitchTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).BeginInit();
@@ -134,10 +133,27 @@
             this.ListViewBill.UseCompatibleStateImageBehavior = false;
             this.ListViewBill.View = System.Windows.Forms.View.Details;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Food Name";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Number";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Price";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Total";
+            // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.cbTable);
             this.panel3.Controls.Add(this.tbTotalPrice);
-            this.panel3.Controls.Add(this.nmSwitchTable);
             this.panel3.Controls.Add(this.btnSwitchTable);
             this.panel3.Controls.Add(this.nmDiscount);
             this.panel3.Controls.Add(this.btnDiscount);
@@ -147,12 +163,17 @@
             this.panel3.Size = new System.Drawing.Size(377, 55);
             this.panel3.TabIndex = 1;
             // 
-            // nmSwitchTable
+            // tbTotalPrice
             // 
-            this.nmSwitchTable.Location = new System.Drawing.Point(3, 32);
-            this.nmSwitchTable.Name = "nmSwitchTable";
-            this.nmSwitchTable.Size = new System.Drawing.Size(94, 20);
-            this.nmSwitchTable.TabIndex = 9;
+            this.tbTotalPrice.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTotalPrice.ForeColor = System.Drawing.Color.Red;
+            this.tbTotalPrice.Location = new System.Drawing.Point(184, 19);
+            this.tbTotalPrice.Name = "tbTotalPrice";
+            this.tbTotalPrice.ReadOnly = true;
+            this.tbTotalPrice.Size = new System.Drawing.Size(96, 22);
+            this.tbTotalPrice.TabIndex = 11;
+            this.tbTotalPrice.Text = "0";
+            this.tbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnSwitchTable
             // 
@@ -162,6 +183,7 @@
             this.btnSwitchTable.TabIndex = 10;
             this.btnSwitchTable.Text = "Switch Table";
             this.btnSwitchTable.UseVisualStyleBackColor = true;
+            this.btnSwitchTable.Click += new System.EventHandler(this.btnSwitchTable_Click);
             // 
             // nmDiscount
             // 
@@ -188,6 +210,7 @@
             this.btnCheckOut.TabIndex = 7;
             this.btnCheckOut.Text = "Check out";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // panel4
             // 
@@ -252,39 +275,18 @@
             this.flpTable.Size = new System.Drawing.Size(377, 396);
             this.flpTable.TabIndex = 3;
             // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Food Name";
-            this.columnHeader1.Width = 100;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Number";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Price";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Total";
-            // 
-            // tbTotalPrice
-            // 
-            this.tbTotalPrice.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTotalPrice.ForeColor = System.Drawing.Color.Red;
-            this.tbTotalPrice.Location = new System.Drawing.Point(184, 19);
-            this.tbTotalPrice.Name = "tbTotalPrice";
-            this.tbTotalPrice.ReadOnly = true;
-            this.tbTotalPrice.Size = new System.Drawing.Size(96, 22);
-            this.tbTotalPrice.TabIndex = 11;
-            this.tbTotalPrice.Text = "0";
-            this.tbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
+            // cbTable
+            // 
+            this.cbTable.FormattingEnabled = true;
+            this.cbTable.Location = new System.Drawing.Point(0, 32);
+            this.cbTable.Name = "cbTable";
+            this.cbTable.Size = new System.Drawing.Size(97, 21);
+            this.cbTable.TabIndex = 7;
             // 
             // f_TableManager
             // 
@@ -305,7 +307,6 @@
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nmSwitchTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nmFoodCount)).EndInit();
@@ -329,7 +330,6 @@
         private System.Windows.Forms.Button btnAddFood;
         private System.Windows.Forms.ComboBox cbFood;
         private System.Windows.Forms.ComboBox cbCategory;
-        private System.Windows.Forms.NumericUpDown nmSwitchTable;
         private System.Windows.Forms.Button btnSwitchTable;
         private System.Windows.Forms.NumericUpDown nmDiscount;
         private System.Windows.Forms.Button btnDiscount;
@@ -341,5 +341,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.TextBox tbTotalPrice;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ComboBox cbTable;
     }
 }

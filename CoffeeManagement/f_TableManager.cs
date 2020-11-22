@@ -20,6 +20,7 @@ namespace CoffeeManagement
             InitializeComponent();
             LoadTable();
             Loadcategory();
+            LoadComboboxTable(cbTable);
         }
 
         #region Method
@@ -40,6 +41,7 @@ namespace CoffeeManagement
         }
         public void LoadTable()
         {
+            flpTable.Controls.Clear();
             List<Table> tablelist = TableDAO.Instance.LoadTableList();
             foreach(Table item in tablelist)
             {
@@ -80,7 +82,12 @@ namespace CoffeeManagement
                 ListViewBill.Items.Add(lsvItem);
             }
             tbTotalPrice.Text = totalPrice.ToString("c",new CultureInfo("vi-VN"));
-
+            
+        }
+        void LoadComboboxTable(ComboBox cb)
+        {
+            cb.DataSource = TableDAO.Instance.LoadTableList();
+            cb.DisplayMember = "Name";
         }
 
         #endregion
@@ -110,7 +117,7 @@ namespace CoffeeManagement
             f_Admin f = new f_Admin();
             f.ShowDialog();
         }
-        #endregion
+        
 
         private void btnDiscount_Click(object sender, EventArgs e)
         {
@@ -164,5 +171,43 @@ namespace CoffeeManagement
 
             LoadTable();
         }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            Table table = ListViewBill.Tag as Table;
+
+            int idBill = BillDAO.Instance.GetUnCheckBillIDByTableID(table.ID);
+            int discount = (int)nmDiscount.Value;
+            string[] a = tbTotalPrice.Text.Split(',');
+            double totalPrice = Convert.ToDouble(a[0].Replace(".", ""));
+            double finalTotalPrice = totalPrice - (totalPrice / 100) * discount;
+
+            if (idBill != -1)
+            {
+                if (MessageBox.Show(string.Format("Bạn có chắc thanh toán hóa đơn cho bàn {0}\nTổng tiền - (Tổng tiền / 100) x Giảm giá\n=> {1} - ({1} / 100) x {2} = {3}", table.Name, totalPrice, discount, finalTotalPrice), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+                {
+
+                    BillDAO.Instance.CheckOut(idBill, discount, (float)finalTotalPrice);
+                   // BillDAO.Instance.CheckOut(idBill);
+                    showBill(table.ID);
+                      
+                    LoadTable();
+                }
+            }
+        }
+
+        private void btnSwitchTable_Click(object sender, EventArgs e)
+        {
+            int id1 = (ListViewBill.Tag as Table).ID;
+
+            int id2 = (cbTable.SelectedItem as Table).ID;
+            if (MessageBox.Show(string.Format("Bạn có thật sự muốn chuyển bàn {0} qua bàn {1}", (ListViewBill.Tag as Table).Name, (cbTable.SelectedItem as Table).Name), "Thông báo", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
+            {
+                TableDAO.Instance.SwitchTable(id1, id2);
+
+                LoadTable();
+            }
+        }
+        #endregion
     }
 }
