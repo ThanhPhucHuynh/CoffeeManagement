@@ -53,6 +53,8 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tbTotalPrice = new System.Windows.Forms.TextBox();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -134,6 +136,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.tbTotalPrice);
             this.panel3.Controls.Add(this.nmSwitchTable);
             this.panel3.Controls.Add(this.btnSwitchTable);
             this.panel3.Controls.Add(this.nmDiscount);
@@ -162,19 +165,20 @@
             // 
             // nmDiscount
             // 
-            this.nmDiscount.Location = new System.Drawing.Point(180, 32);
+            this.nmDiscount.Location = new System.Drawing.Point(103, 32);
             this.nmDiscount.Name = "nmDiscount";
-            this.nmDiscount.Size = new System.Drawing.Size(94, 20);
+            this.nmDiscount.Size = new System.Drawing.Size(75, 20);
             this.nmDiscount.TabIndex = 7;
             // 
             // btnDiscount
             // 
-            this.btnDiscount.Location = new System.Drawing.Point(180, 4);
+            this.btnDiscount.Location = new System.Drawing.Point(103, 3);
             this.btnDiscount.Name = "btnDiscount";
-            this.btnDiscount.Size = new System.Drawing.Size(94, 26);
+            this.btnDiscount.Size = new System.Drawing.Size(75, 26);
             this.btnDiscount.TabIndex = 8;
             this.btnDiscount.Text = "Discount";
             this.btnDiscount.UseVisualStyleBackColor = true;
+            this.btnDiscount.Click += new System.EventHandler(this.btnDiscount_Click);
             // 
             // btnCheckOut
             // 
@@ -263,6 +267,23 @@
             // 
             this.columnHeader4.Text = "Total";
             // 
+            // tbTotalPrice
+            // 
+            this.tbTotalPrice.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTotalPrice.ForeColor = System.Drawing.Color.Red;
+            this.tbTotalPrice.Location = new System.Drawing.Point(184, 19);
+            this.tbTotalPrice.Name = "tbTotalPrice";
+            this.tbTotalPrice.ReadOnly = true;
+            this.tbTotalPrice.Size = new System.Drawing.Size(96, 22);
+            this.tbTotalPrice.TabIndex = 11;
+            this.tbTotalPrice.Text = "0";
+            this.tbTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            // 
             // f_TableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -276,10 +297,12 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "f_TableManager";
             this.Text = "TableManager";
+            this.Load += new System.EventHandler(this.f_TableManager_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmSwitchTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nmDiscount)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -314,5 +337,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.TextBox tbTotalPrice;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }

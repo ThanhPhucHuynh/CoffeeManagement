@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,15 +52,18 @@ namespace CoffeeManagement
             ListViewBill.Items.Clear();
             //List<BillInfo> listBillInfo = BillInfoDAO.Instance.GetListBillInfo(BillDAO.Instance.GetUnCheckBillIDByTableID(id));
             List<CoffeeManagement.DTO.Menu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
+            float totalPrice = 0;
+            
             foreach (CoffeeManagement.DTO.Menu item in listBillInfo)
             {
                 ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
                 lsvItem.SubItems.Add(item.Count.ToString());
                 lsvItem.SubItems.Add(item.Price.ToString());
                 lsvItem.SubItems.Add(item.TotalPrice.ToString());
-
+                totalPrice += item.TotalPrice;
                 ListViewBill.Items.Add(lsvItem);
             }
+            tbTotalPrice.Text = totalPrice.ToString("c",new CultureInfo("vi-VN"));
 
         }
 
@@ -89,5 +93,15 @@ namespace CoffeeManagement
             f.ShowDialog();
         }
         #endregion
+
+        private void btnDiscount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void f_TableManager_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
