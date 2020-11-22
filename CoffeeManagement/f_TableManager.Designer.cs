@@ -45,7 +45,7 @@
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.nmFoodCount = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddFood = new System.Windows.Forms.Button();
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
@@ -192,7 +192,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.nmFoodCount);
-            this.panel4.Controls.Add(this.button1);
+            this.panel4.Controls.Add(this.btnAddFood);
             this.panel4.Controls.Add(this.cbFood);
             this.panel4.Controls.Add(this.cbCategory);
             this.panel4.Location = new System.Drawing.Point(386, 42);
@@ -217,14 +217,15 @@
             0,
             0});
             // 
-            // button1
+            // btnAddFood
             // 
-            this.button1.Location = new System.Drawing.Point(198, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 48);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "ADD FOOD";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddFood.Location = new System.Drawing.Point(198, 3);
+            this.btnAddFood.Name = "btnAddFood";
+            this.btnAddFood.Size = new System.Drawing.Size(94, 48);
+            this.btnAddFood.TabIndex = 5;
+            this.btnAddFood.Text = "ADD FOOD";
+            this.btnAddFood.UseVisualStyleBackColor = true;
+            this.btnAddFood.Click += new System.EventHandler(this.addFood_Click);
             // 
             // cbFood
             // 
@@ -241,6 +242,7 @@
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(175, 21);
             this.cbCategory.TabIndex = 3;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
             // 
             // flpTable
             // 
@@ -324,7 +326,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.NumericUpDown nmFoodCount;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddFood;
         private System.Windows.Forms.ComboBox cbFood;
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.NumericUpDown nmSwitchTable;

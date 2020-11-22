@@ -19,10 +19,26 @@ namespace CoffeeManagement
         {
             InitializeComponent();
             LoadTable();
+            Loadcategory();
         }
 
         #region Method
-         public void LoadTable()
+
+
+        void Loadcategory()
+        {
+            List<Category> listCategory = CategoryDAO.Instance.GetListCategory();
+            cbCategory.DataSource = listCategory;
+            cbCategory.DisplayMember = "Name";
+        }
+        void LoadFoodFromCategory(int id)
+        {
+            List<Food> listFoods = FoodDAO.Instance.GetFoodByCategoryID(id);
+            cbFood.DataSource = listFoods;
+            cbFood.DisplayMember = "Name";
+
+        }
+        public void LoadTable()
         {
             List<Table> tablelist = TableDAO.Instance.LoadTableList();
             foreach(Table item in tablelist)
@@ -73,7 +89,9 @@ namespace CoffeeManagement
         private void Btn_Click(object sender, EventArgs e)
         {
             //throw new NotImplementedException();
-            int tableID = ((sender as Button).Tag as Table).ID; 
+
+            int tableID = ((sender as Button).Tag as Table).ID;
+            ListViewBill.Tag = (sender as Button).Tag;
             showBill(tableID);
         }
         private void infoUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -102,6 +120,49 @@ namespace CoffeeManagement
         private void f_TableManager_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = 0;
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem == null)
+            {
+                return;
+            }
+
+            Category selected = cb.SelectedItem as Category;
+            id = selected.ID;
+            LoadFoodFromCategory(id);
+        }
+
+        private void addFood_Click(object sender, EventArgs e)
+        {
+            Table table = ListViewBill.Tag as Table;
+
+            if (table == null)
+            {
+                MessageBox.Show("PSL Choose table");
+                return;
+            }
+
+            int idBill = BillDAO.Instance.GetUnCheckBillIDByTableID(table.ID);
+            int foodID = (cbFood.SelectedItem as Food).ID;
+            int count = (int)nmFoodCount.Value;
+
+            if (idBill == -1)
+            {
+                BillDAO.Instance.InsertBill(table.ID);
+                BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxIDBill(), foodID, count);
+            }
+            else
+            {
+                BillInfoDAO.Instance.InsertBillInfo(idBill, foodID, count);
+            }
+
+            showBill(table.ID);
+
+            LoadTable();
         }
     }
 }
