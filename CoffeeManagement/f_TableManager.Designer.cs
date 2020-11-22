@@ -49,6 +49,10 @@
             this.cbFood = new System.Windows.Forms.ComboBox();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -114,12 +118,19 @@
             // 
             // ListViewBill
             // 
+            this.ListViewBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.ListViewBill.GridLines = true;
             this.ListViewBill.HideSelection = false;
             this.ListViewBill.Location = new System.Drawing.Point(3, 3);
             this.ListViewBill.Name = "ListViewBill";
             this.ListViewBill.Size = new System.Drawing.Size(374, 252);
             this.ListViewBill.TabIndex = 0;
             this.ListViewBill.UseCompatibleStateImageBehavior = false;
+            this.ListViewBill.View = System.Windows.Forms.View.Details;
             // 
             // panel3
             // 
@@ -235,6 +246,23 @@
             this.flpTable.Size = new System.Drawing.Size(377, 396);
             this.flpTable.TabIndex = 3;
             // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Food Name";
+            this.columnHeader1.Width = 100;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Number";
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Price";
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Total";
+            // 
             // f_TableManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -282,5 +310,9 @@
         private System.Windows.Forms.Button btnDiscount;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.FlowLayoutPanel flpTable;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

@@ -1,5 +1,5 @@
 ﻿using CoffeeManagement.DAO;
-using QuanLiQuanCafe.DAO;
+using CoffeeManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +30,8 @@ namespace CoffeeManagement
                 Button btn = new Button() {Width= TableDAO.tableHeight, Height= TableDAO.tableWidth };
 
                 btn.Text = item.Name + Environment.NewLine + item.Status;
+                btn.Click += Btn_Click;
+                btn.Tag = item;
                 switch (item.Status)
                 {
                     case "Trống":
@@ -43,9 +45,33 @@ namespace CoffeeManagement
                 flpTable.Controls.Add(btn);
             }
         }
+
+        void showBill(int id)
+        {
+            ListViewBill.Items.Clear();
+            //List<BillInfo> listBillInfo = BillInfoDAO.Instance.GetListBillInfo(BillDAO.Instance.GetUnCheckBillIDByTableID(id));
+            List<CoffeeManagement.DTO.Menu> listBillInfo = MenuDAO.Instance.GetListMenuByTable(id);
+            foreach (CoffeeManagement.DTO.Menu item in listBillInfo)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.FoodName.ToString());
+                lsvItem.SubItems.Add(item.Count.ToString());
+                lsvItem.SubItems.Add(item.Price.ToString());
+                lsvItem.SubItems.Add(item.TotalPrice.ToString());
+
+                ListViewBill.Items.Add(lsvItem);
+            }
+
+        }
+
         #endregion
 
         #region event
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            int tableID = ((sender as Button).Tag as Table).ID; 
+            showBill(tableID);
+        }
         private void infoUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
 

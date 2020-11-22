@@ -1,4 +1,5 @@
-﻿using CoffeeManagement.DAO;
+﻿
+using CoffeeManagement.DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -6,7 +6,7 @@ using System.Data;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
-namespace QuanLiQuanCafe.DAO
+namespace CoffeeManagement.DTO
 {
     public class Table
     {
