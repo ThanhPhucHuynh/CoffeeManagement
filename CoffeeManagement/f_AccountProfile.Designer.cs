@@ -94,7 +94,6 @@
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(222, 20);
             this.tbName.TabIndex = 1;
-            this.tbName.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -191,6 +190,7 @@
             this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 

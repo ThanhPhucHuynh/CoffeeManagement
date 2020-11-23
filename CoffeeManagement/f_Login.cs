@@ -1,4 +1,5 @@
 ﻿using CoffeeManagement.DAO;
+using CoffeeManagement.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,7 +46,8 @@ namespace CoffeeManagement
             string password = tbPassword.Text;
             if (checkLogin(username, password))
             {
-                f_TableManager f = new f_TableManager();
+                Account loginAccount = AccountDAO.Instance.GetAccountByUserName(username);
+                f_TableManager f = new f_TableManager(loginAccount);
                 this.Hide();
                 f.ShowDialog(); // this Dialog is top mode 
                 this.Show();

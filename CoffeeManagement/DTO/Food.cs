@@ -24,37 +24,29 @@ namespace CoffeeManagement.DTO
             this.CategoryID = (int)row["idCategory"];
             this.Price = (float)Convert.ToDouble(row["price"].ToString());
         }
-
-        private float price;
-
-        public float Price
-        {
-            get { return price; }
-            set { price = value; }
-        }
-
-        private int categoryID;
-
-        public int CategoryID
-        {
-            get { return categoryID; }
-            set { categoryID = value; }
-        }
-
         private string name;
-
+        private int categoryID;
+        private int iD;
+        private float price;
+        public int ID
+        {
+            get { return iD; }
+            set { iD = value; }
+        }
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
-
-        private int iD;
-
-        public int ID
+        public int CategoryID
         {
-            get { return iD; }
-            set { iD = value; }
+            get { return categoryID; }
+            set { categoryID = value; }
+        }
+        public float Price
+        {
+            get { return price; }
+            set { price = value; }
         }
     }
 }

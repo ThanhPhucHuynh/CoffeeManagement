@@ -10,21 +10,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static CoffeeManagement.f_AccountProfile;
 
 namespace CoffeeManagement
 {
     public partial class f_TableManager : Form
     {
-        public f_TableManager()
+        private Account loginAccount;
+
+        public Account LoginAccount
         {
+            get { return loginAccount; }
+            set { loginAccount = value; ChangeAccount(LoginAccount.Type); }
+        }
+        public f_TableManager(Account acc)
+        {
+
             InitializeComponent();
+
+            this.LoginAccount = acc;
+
             LoadTable();
             Loadcategory();
             LoadComboboxTable(cbTable);
         }
 
         #region Method
-
+        void ChangeAccount(int type)
+        {
+            adminToolStripMenuItem.Enabled = type == 1;
+            infoUserToolStripMenuItem.Text += " (" + LoginAccount.DisplayName + ")";
+        }
 
         void Loadcategory()
         {
@@ -108,13 +124,49 @@ namespace CoffeeManagement
 
         private void userInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            f_AccountProfile f = new f_AccountProfile();
+            f_AccountProfile f = new f_AccountProfile(LoginAccount);
+            f.UpdateAccount += f_UpdateAccount;
             f.ShowDialog();
+        }
+        void LoadFoodListByCategoryID(int id)
+        {
+            List<Food> listFood = FoodDAO.Instance.GetFoodByCategoryID(id);
+            cbFood.DataSource = listFood;
+            cbFood.DisplayMember = "Name";
+        }
+        void f_UpdateAccount(object sender, AccountEvent e)
+        {
+            infoUserToolStripMenuItem.Text = "Info account (" + e.Acc.DisplayName + ")";
+        }
+        void f_UpdateFood(object sender, EventArgs e)
+        {
+            LoadFoodFromCategory((cbCategory.SelectedItem as Category).ID);
+            if (ListViewBill.Tag != null)
+                showBill((ListViewBill.Tag as Table).ID);
+        }
+
+        void f_DeleteFood(object sender, EventArgs e)
+        {
+            LoadFoodFromCategory((cbCategory.SelectedItem as Category).ID);
+            if (ListViewBill.Tag != null)
+                showBill((ListViewBill.Tag as Table).ID);
+            LoadTable();
+        }
+
+        void f_InsertFood(object sender, EventArgs e)
+        {
+            LoadFoodFromCategory((cbCategory.SelectedItem as Category).ID);
+            if (ListViewBill.Tag != null)
+                showBill((ListViewBill.Tag as Table).ID);
         }
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
             f_Admin f = new f_Admin();
+            f.loginAccount = LoginAccount;
+            f.InsertFood += f_InsertFood;
+            f.DeleteFood += f_DeleteFood;
+            f.UpdateFood += f_UpdateFood;
             f.ShowDialog();
         }
         

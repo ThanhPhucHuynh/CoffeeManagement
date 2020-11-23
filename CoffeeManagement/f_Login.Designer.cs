@@ -31,10 +31,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbAccount = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tbPassword = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -69,17 +69,17 @@
             this.tbAccount.Name = "tbAccount";
             this.tbAccount.Size = new System.Drawing.Size(222, 20);
             this.tbAccount.TabIndex = 1;
+            this.tbAccount.Text = "k9";
             this.tbAccount.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // label3
+            // label2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 21);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Password: ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(38, 37);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Account: ";
             // 
             // panel2
             // 
@@ -96,16 +96,18 @@
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(222, 20);
             this.tbPassword.TabIndex = 2;
+            this.tbPassword.Text = "1";
             this.tbPassword.UseSystemPasswordChar = true;
             // 
-            // label2
+            // label3
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 37);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Account: ";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 21);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Password: ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel1
             // 
