@@ -357,6 +357,8 @@ select * from BillInfo where idBill = 1
 SELECT f.name, bi.count, f.price, f.price*bi.count AS totalPrice FROM dbo.BillInfo AS bi, dbo.Bill AS b, dbo.Food AS f WHERE bi.idBill = b.id AND bi.idFood = f.id AND b.status = 0 AND b.idTable = 16
 go
 
+
+
 create proc USP_InsertBill
 @idTable INT
 as
@@ -371,6 +373,21 @@ begin
 			@idTable, --idTable -int
 			0)
 end
+go
+
+alter proc USP_InsertTable
+@name varchar(100)
+as
+begin
+	Insert dbo.TableFood
+		(name,
+			status)
+	values(
+			@name, --idTable -int
+			 N'Trống')
+end
+go
+exec USP_InsertTable @name = 'hehe'
 go
 alter proc USP_InsertBillInfo
 @idBill INT, @idFood int, @count int

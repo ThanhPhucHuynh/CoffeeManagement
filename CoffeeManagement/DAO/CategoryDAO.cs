@@ -36,6 +36,12 @@ namespace CoffeeManagement.DAO
 
             return list;
         }
+        public bool InsertCategory(string name)
+        {
+            string query = string.Format("INSERT dbo.FoodCategory ( name ) VALUES  ( N'{0}')", name);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
 
         public Category GetCategoryByID(int id)
         {

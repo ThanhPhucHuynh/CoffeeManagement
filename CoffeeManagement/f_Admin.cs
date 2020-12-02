@@ -39,9 +39,20 @@ namespace CoffeeManagement
             LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
             LoadAccount();
             LoadListFood();
+            LoadTable();
+            LoadCategory();
             LoadCategoryIntoCombobox(cbCategoryFood);
             AddFoodBinding();
             AddAccountBinding();
+            
+        }
+        void LoadTable()
+        {
+            dtgvTable.DataSource = TableDAO.Instance.LoadTableList();
+        }
+        void LoadCategory()
+        {
+            dtgvCategory.DataSource = CategoryDAO.Instance.GetListCategory();
         }
         void LoadAccount()
         {
@@ -78,7 +89,32 @@ namespace CoffeeManagement
 
             LoadAccount();
         }
+        void AddCatagory(string name)
+        {
+            if (CategoryDAO.Instance.InsertCategory(name))
+            {
+                MessageBox.Show("Thêm Category thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm Category thất bại");
+            }
 
+            LoadCategory();
+        }
+        void AddTable(string name)
+        {
+            if (TableDAO.Instance.InsertTable(name))
+            {
+                MessageBox.Show("Thêm Table thành công");
+            }
+            else
+            {
+                MessageBox.Show("Thêm Table thất bại");
+            }
+
+            LoadTable();
+        }
         void EditAccount(string userName, string displayName, int type)
         {
             if (AccountDAO.Instance.UpdateAccount(userName, displayName, type))
@@ -343,6 +379,27 @@ namespace CoffeeManagement
 
 
             this.reportViewer1.RefreshReport();
+        }
+
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            string name = tbNameCategory.Text;
+
+            AddCatagory(name);
+        }
+
+        private void btnAddTable_Click(object sender, EventArgs e)
+        {
+            string name = tbNameTable.Text;
+            if(name != "")
+            {
+                AddTable(name);
+            }
+            else
+            {
+                MessageBox.Show("thất bại");
+            }
+          
         }
     }
 }

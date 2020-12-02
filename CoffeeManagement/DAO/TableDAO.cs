@@ -40,5 +40,14 @@ namespace CoffeeManagement.DAO
 
             return tableList;
         }
+        public bool InsertTable(string name)
+        {
+           // string status = "Trống";
+            //string query = string.Format("exec USP_InsertTable @name", new object[] { name });
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_InsertTable @name", new object[] { name });
+
+            return result > 0;
+        }
+
     }
 }

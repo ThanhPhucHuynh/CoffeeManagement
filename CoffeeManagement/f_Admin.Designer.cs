@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.USP_TablefoodBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.QuanLyQuanCafeDataSet = new CoffeeManagement.QuanLyQuanCafeDataSet();
             this.tcRoot = new System.Windows.Forms.TabControl();
             this.tcBill = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -112,12 +114,12 @@
             this.tbAccountAccount = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.Report = new System.Windows.Forms.TabPage();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataSet1 = new CoffeeManagement.DataSet1();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.QuanLyQuanCafeDataSet = new CoffeeManagement.QuanLyQuanCafeDataSet();
-            this.USP_TablefoodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.USP_TablefoodTableAdapter = new CoffeeManagement.QuanLyQuanCafeDataSetTableAdapters.USP_TablefoodTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.USP_TablefoodBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).BeginInit();
             this.tcRoot.SuspendLayout();
             this.tcBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -158,9 +160,17 @@
             this.Report.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.USP_TablefoodBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // USP_TablefoodBindingSource
+            // 
+            this.USP_TablefoodBindingSource.DataMember = "USP_Tablefood";
+            this.USP_TablefoodBindingSource.DataSource = this.QuanLyQuanCafeDataSet;
+            // 
+            // QuanLyQuanCafeDataSet
+            // 
+            this.QuanLyQuanCafeDataSet.DataSetName = "QuanLyQuanCafeDataSet";
+            this.QuanLyQuanCafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tcRoot
             // 
@@ -525,6 +535,7 @@
             this.btnAddCategory.TabIndex = 0;
             this.btnAddCategory.Text = "ADD";
             this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // dtgvCategory
             // 
@@ -620,6 +631,7 @@
             // 
             // btnViewTable
             // 
+            this.btnViewTable.Enabled = false;
             this.btnViewTable.Location = new System.Drawing.Point(291, 3);
             this.btnViewTable.Name = "btnViewTable";
             this.btnViewTable.Size = new System.Drawing.Size(75, 47);
@@ -629,6 +641,7 @@
             // 
             // btnEditTable
             // 
+            this.btnEditTable.Enabled = false;
             this.btnEditTable.Location = new System.Drawing.Point(200, 3);
             this.btnEditTable.Name = "btnEditTable";
             this.btnEditTable.Size = new System.Drawing.Size(75, 47);
@@ -638,6 +651,7 @@
             // 
             // btnDelTable
             // 
+            this.btnDelTable.Enabled = false;
             this.btnDelTable.Location = new System.Drawing.Point(107, 4);
             this.btnDelTable.Name = "btnDelTable";
             this.btnDelTable.Size = new System.Drawing.Size(75, 47);
@@ -653,6 +667,7 @@
             this.btnAddTable.TabIndex = 0;
             this.btnAddTable.Text = "ADD";
             this.btnAddTable.UseVisualStyleBackColor = true;
+            this.btnAddTable.Click += new System.EventHandler(this.btnAddTable_Click);
             // 
             // dtgvTable
             // 
@@ -685,6 +700,7 @@
             // 
             this.tbStatusTable.Location = new System.Drawing.Point(113, 18);
             this.tbStatusTable.Name = "tbStatusTable";
+            this.tbStatusTable.ReadOnly = true;
             this.tbStatusTable.Size = new System.Drawing.Size(222, 20);
             this.tbStatusTable.TabIndex = 2;
             // 
@@ -933,6 +949,18 @@
             this.Report.Text = "Report";
             this.Report.UseVisualStyleBackColor = true;
             // 
+            // reportViewer1
+            // 
+            reportDataSource3.Name = "DataSet";
+            reportDataSource3.Value = this.USP_TablefoodBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CoffeeManagement.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(-4, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(782, 405);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
@@ -942,28 +970,6 @@
             // 
             this.dataSet1BindingSource.DataSource = this.dataSet1;
             this.dataSet1BindingSource.Position = 0;
-            // 
-            // reportViewer1
-            // 
-            reportDataSource1.Name = "DataSet";
-            reportDataSource1.Value = this.USP_TablefoodBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CoffeeManagement.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(-4, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(782, 405);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // QuanLyQuanCafeDataSet
-            // 
-            this.QuanLyQuanCafeDataSet.DataSetName = "QuanLyQuanCafeDataSet";
-            this.QuanLyQuanCafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // USP_TablefoodBindingSource
-            // 
-            this.USP_TablefoodBindingSource.DataMember = "USP_Tablefood";
-            this.USP_TablefoodBindingSource.DataSource = this.QuanLyQuanCafeDataSet;
             // 
             // USP_TablefoodTableAdapter
             // 
@@ -978,6 +984,8 @@
             this.Name = "f_Admin";
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.f_Admin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.USP_TablefoodBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).EndInit();
             this.tcRoot.ResumeLayout(false);
             this.tcBill.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1031,8 +1039,6 @@
             this.Report.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.USP_TablefoodBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
