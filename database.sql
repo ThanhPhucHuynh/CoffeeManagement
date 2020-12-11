@@ -575,7 +575,15 @@ as begin
 	and t.id = b.id
 end
 go
+create proc USP_GetListBill
+as begin
 
+	select t.name, b.totalprice, DateCheckIn, DateCheckOut, discount
+	from dbo.Bill as b, dbo.TableFood as t
+	where b.status =1
+	and t.id = b.id
+end
+go
 drop proc USP_GetListBillByDate
 go 
 select * from account
@@ -665,3 +673,11 @@ go
 
 SELECT * FROM dbo.Food WHERE dbo.fuConvertToUnsign1(name) LIKE N'%' + dbo.fuConvertToUnsign1(N'{0}') + '%'
 select * from Food
+
+select * from TableFood
+
+
+update FoodCategory  set name = 'Table 1' where id=1
+go
+select * from FoodCategory
+delete from FoodCategory where id = 7
