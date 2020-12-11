@@ -20,9 +20,9 @@ namespace CoffeeManagement {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("QuanLyQuanCafeDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("QuanLyQuanCafeDataSet2")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class QuanLyQuanCafeDataSet : global::System.Data.DataSet {
+    public partial class QuanLyQuanCafeDataSet2 : global::System.Data.DataSet {
         
         private AccountDataTable tableAccount;
         
@@ -58,7 +58,7 @@ namespace CoffeeManagement {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public QuanLyQuanCafeDataSet() {
+        public QuanLyQuanCafeDataSet2() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -69,7 +69,7 @@ namespace CoffeeManagement {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected QuanLyQuanCafeDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected QuanLyQuanCafeDataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -285,7 +285,7 @@ namespace CoffeeManagement {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            QuanLyQuanCafeDataSet cln = ((QuanLyQuanCafeDataSet)(base.Clone()));
+            QuanLyQuanCafeDataSet2 cln = ((QuanLyQuanCafeDataSet2)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -451,9 +451,9 @@ namespace CoffeeManagement {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "QuanLyQuanCafeDataSet";
+            this.DataSetName = "QuanLyQuanCafeDataSet2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/QuanLyQuanCafeDataSet.xsd";
+            this.Namespace = "http://tempuri.org/QuanLyQuanCafeDataSet2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableAccount = new AccountDataTable();
@@ -573,7 +573,7 @@ namespace CoffeeManagement {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+            QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -897,7 +897,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1248,7 +1248,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1561,7 +1561,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1872,7 +1872,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2150,7 +2150,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2444,7 +2444,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2750,7 +2750,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3055,7 +3055,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3360,7 +3360,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3666,7 +3666,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3958,7 +3958,7 @@ namespace CoffeeManagement {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                QuanLyQuanCafeDataSet ds = new QuanLyQuanCafeDataSet();
+                QuanLyQuanCafeDataSet2 ds = new QuanLyQuanCafeDataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5344,7 +5344,7 @@ namespace CoffeeManagement {
         }
     }
 }
-namespace CoffeeManagement.QuanLyQuanCafeDataSetTableAdapters {
+namespace CoffeeManagement.QuanLyQuanCafeDataSet2TableAdapters {
     
     
     /// <summary>
@@ -5529,7 +5529,7 @@ SELECT UserName, DisplayName, Password, Type FROM Account WHERE (UserName = @Use
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.AccountDataTable dataTable) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.AccountDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5542,9 +5542,9 @@ SELECT UserName, DisplayName, Password, Type FROM Account WHERE (UserName = @Use
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.AccountDataTable GetData() {
+        public virtual QuanLyQuanCafeDataSet2.AccountDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            QuanLyQuanCafeDataSet.AccountDataTable dataTable = new QuanLyQuanCafeDataSet.AccountDataTable();
+            QuanLyQuanCafeDataSet2.AccountDataTable dataTable = new QuanLyQuanCafeDataSet2.AccountDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5552,14 +5552,14 @@ SELECT UserName, DisplayName, Password, Type FROM Account WHERE (UserName = @Use
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet.AccountDataTable dataTable) {
+        public virtual int Update(QuanLyQuanCafeDataSet2.AccountDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet dataSet) {
+        public virtual int Update(QuanLyQuanCafeDataSet2 dataSet) {
             return this.Adapter.Update(dataSet, "Account");
         }
         
@@ -5928,7 +5928,7 @@ SELECT id, idTable, DateCheckIn, DateCheckOut, status, discount, totalprice FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.BillDataTable dataTable) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.BillDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -5941,9 +5941,9 @@ SELECT id, idTable, DateCheckIn, DateCheckOut, status, discount, totalprice FROM
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.BillDataTable GetData() {
+        public virtual QuanLyQuanCafeDataSet2.BillDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            QuanLyQuanCafeDataSet.BillDataTable dataTable = new QuanLyQuanCafeDataSet.BillDataTable();
+            QuanLyQuanCafeDataSet2.BillDataTable dataTable = new QuanLyQuanCafeDataSet2.BillDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -5951,14 +5951,14 @@ SELECT id, idTable, DateCheckIn, DateCheckOut, status, discount, totalprice FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet.BillDataTable dataTable) {
+        public virtual int Update(QuanLyQuanCafeDataSet2.BillDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet dataSet) {
+        public virtual int Update(QuanLyQuanCafeDataSet2 dataSet) {
             return this.Adapter.Update(dataSet, "Bill");
         }
         
@@ -6352,7 +6352,7 @@ SELECT id, idBill, idFood, count FROM BillInfo WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.BillInfoDataTable dataTable) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.BillInfoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6365,9 +6365,9 @@ SELECT id, idBill, idFood, count FROM BillInfo WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.BillInfoDataTable GetData() {
+        public virtual QuanLyQuanCafeDataSet2.BillInfoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            QuanLyQuanCafeDataSet.BillInfoDataTable dataTable = new QuanLyQuanCafeDataSet.BillInfoDataTable();
+            QuanLyQuanCafeDataSet2.BillInfoDataTable dataTable = new QuanLyQuanCafeDataSet2.BillInfoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6375,14 +6375,14 @@ SELECT id, idBill, idFood, count FROM BillInfo WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet.BillInfoDataTable dataTable) {
+        public virtual int Update(QuanLyQuanCafeDataSet2.BillInfoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet dataSet) {
+        public virtual int Update(QuanLyQuanCafeDataSet2 dataSet) {
             return this.Adapter.Update(dataSet, "BillInfo");
         }
         
@@ -6668,7 +6668,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.FoodDataTable dataTable) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.FoodDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -6681,9 +6681,9 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.FoodDataTable GetData() {
+        public virtual QuanLyQuanCafeDataSet2.FoodDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            QuanLyQuanCafeDataSet.FoodDataTable dataTable = new QuanLyQuanCafeDataSet.FoodDataTable();
+            QuanLyQuanCafeDataSet2.FoodDataTable dataTable = new QuanLyQuanCafeDataSet2.FoodDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -6691,14 +6691,14 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet.FoodDataTable dataTable) {
+        public virtual int Update(QuanLyQuanCafeDataSet2.FoodDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet dataSet) {
+        public virtual int Update(QuanLyQuanCafeDataSet2 dataSet) {
             return this.Adapter.Update(dataSet, "Food");
         }
         
@@ -6993,7 +6993,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.FoodCategoryDataTable dataTable) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.FoodCategoryDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7006,9 +7006,9 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.FoodCategoryDataTable GetData() {
+        public virtual QuanLyQuanCafeDataSet2.FoodCategoryDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            QuanLyQuanCafeDataSet.FoodCategoryDataTable dataTable = new QuanLyQuanCafeDataSet.FoodCategoryDataTable();
+            QuanLyQuanCafeDataSet2.FoodCategoryDataTable dataTable = new QuanLyQuanCafeDataSet2.FoodCategoryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7016,14 +7016,14 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet.FoodCategoryDataTable dataTable) {
+        public virtual int Update(QuanLyQuanCafeDataSet2.FoodCategoryDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet dataSet) {
+        public virtual int Update(QuanLyQuanCafeDataSet2 dataSet) {
             return this.Adapter.Update(dataSet, "FoodCategory");
         }
         
@@ -7316,7 +7316,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.TableFoodDataTable dataTable) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.TableFoodDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7329,9 +7329,9 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.TableFoodDataTable GetData() {
+        public virtual QuanLyQuanCafeDataSet2.TableFoodDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            QuanLyQuanCafeDataSet.TableFoodDataTable dataTable = new QuanLyQuanCafeDataSet.TableFoodDataTable();
+            QuanLyQuanCafeDataSet2.TableFoodDataTable dataTable = new QuanLyQuanCafeDataSet2.TableFoodDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7339,14 +7339,14 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet.TableFoodDataTable dataTable) {
+        public virtual int Update(QuanLyQuanCafeDataSet2.TableFoodDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(QuanLyQuanCafeDataSet dataSet) {
+        public virtual int Update(QuanLyQuanCafeDataSet2 dataSet) {
             return this.Adapter.Update(dataSet, "TableFood");
         }
         
@@ -7639,7 +7639,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.USP_GetAccountByUserNameDataTable dataTable, string userName) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.USP_GetAccountByUserNameDataTable dataTable, string userName) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((userName == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -7658,7 +7658,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.USP_GetAccountByUserNameDataTable GetData(string userName) {
+        public virtual QuanLyQuanCafeDataSet2.USP_GetAccountByUserNameDataTable GetData(string userName) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((userName == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -7666,7 +7666,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(userName));
             }
-            QuanLyQuanCafeDataSet.USP_GetAccountByUserNameDataTable dataTable = new QuanLyQuanCafeDataSet.USP_GetAccountByUserNameDataTable();
+            QuanLyQuanCafeDataSet2.USP_GetAccountByUserNameDataTable dataTable = new QuanLyQuanCafeDataSet2.USP_GetAccountByUserNameDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7823,7 +7823,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.USP_GetListBillDataTable dataTable) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.USP_GetListBillDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7836,9 +7836,9 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.USP_GetListBillDataTable GetData() {
+        public virtual QuanLyQuanCafeDataSet2.USP_GetListBillDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            QuanLyQuanCafeDataSet.USP_GetListBillDataTable dataTable = new QuanLyQuanCafeDataSet.USP_GetListBillDataTable();
+            QuanLyQuanCafeDataSet2.USP_GetListBillDataTable dataTable = new QuanLyQuanCafeDataSet2.USP_GetListBillDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7997,7 +7997,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.USP_GetListBillByDateDataTable dataTable, global::System.Nullable<global::System.DateTime> checkIn, global::System.Nullable<global::System.DateTime> checkOut) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.USP_GetListBillByDateDataTable dataTable, global::System.Nullable<global::System.DateTime> checkIn, global::System.Nullable<global::System.DateTime> checkOut) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((checkIn.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(checkIn.Value));
@@ -8022,7 +8022,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.USP_GetListBillByDateDataTable GetData(global::System.Nullable<global::System.DateTime> checkIn, global::System.Nullable<global::System.DateTime> checkOut) {
+        public virtual QuanLyQuanCafeDataSet2.USP_GetListBillByDateDataTable GetData(global::System.Nullable<global::System.DateTime> checkIn, global::System.Nullable<global::System.DateTime> checkOut) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((checkIn.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(checkIn.Value));
@@ -8036,7 +8036,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            QuanLyQuanCafeDataSet.USP_GetListBillByDateDataTable dataTable = new QuanLyQuanCafeDataSet.USP_GetListBillByDateDataTable();
+            QuanLyQuanCafeDataSet2.USP_GetListBillByDateDataTable dataTable = new QuanLyQuanCafeDataSet2.USP_GetListBillByDateDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8194,7 +8194,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.USP_LoginDataTable dataTable, string username, string password) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.USP_LoginDataTable dataTable, string username, string password) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((username == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -8219,7 +8219,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.USP_LoginDataTable GetData(string username, string password) {
+        public virtual QuanLyQuanCafeDataSet2.USP_LoginDataTable GetData(string username, string password) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((username == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -8233,7 +8233,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(password));
             }
-            QuanLyQuanCafeDataSet.USP_LoginDataTable dataTable = new QuanLyQuanCafeDataSet.USP_LoginDataTable();
+            QuanLyQuanCafeDataSet2.USP_LoginDataTable dataTable = new QuanLyQuanCafeDataSet2.USP_LoginDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8388,7 +8388,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(QuanLyQuanCafeDataSet.USP_TablefoodDataTable dataTable) {
+        public virtual int Fill(QuanLyQuanCafeDataSet2.USP_TablefoodDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8401,9 +8401,9 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual QuanLyQuanCafeDataSet.USP_TablefoodDataTable GetData() {
+        public virtual QuanLyQuanCafeDataSet2.USP_TablefoodDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            QuanLyQuanCafeDataSet.USP_TablefoodDataTable dataTable = new QuanLyQuanCafeDataSet.USP_TablefoodDataTable();
+            QuanLyQuanCafeDataSet2.USP_TablefoodDataTable dataTable = new QuanLyQuanCafeDataSet2.USP_TablefoodDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8858,7 +8858,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(QuanLyQuanCafeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(QuanLyQuanCafeDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._foodCategoryTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.FoodCategory.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -8922,7 +8922,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(QuanLyQuanCafeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(QuanLyQuanCafeDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._foodCategoryTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.FoodCategory.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -8980,7 +8980,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(QuanLyQuanCafeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(QuanLyQuanCafeDataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._billInfoTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.BillInfo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -9062,7 +9062,7 @@ SELECT id, name, idCategory, price FROM Food WHERE (id = @id)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(QuanLyQuanCafeDataSet dataSet) {
+        public virtual int UpdateAll(QuanLyQuanCafeDataSet2 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

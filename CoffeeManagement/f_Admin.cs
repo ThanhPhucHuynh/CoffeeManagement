@@ -43,6 +43,8 @@ namespace CoffeeManagement
             LoadCategory();
             LoadCategoryIntoCombobox(cbCategoryFood);
             AddFoodBinding();
+            AddTableBinding();
+            addCategoryBinding();
             AddAccountBinding();
             
         }
@@ -177,11 +179,24 @@ namespace CoffeeManagement
             tbIdFood.DataBindings.Add(new Binding("Text", dtgwFood.DataSource, "ID", true, DataSourceUpdateMode.Never));
             nmPriceFood.DataBindings.Add(new Binding("Value", dtgwFood.DataSource, "Price", true, DataSourceUpdateMode.Never));
         }
+        void AddTableBinding()
+        {
+            tbIdTable.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            tbNameTable.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "Name", true, DataSourceUpdateMode.Never));
+            tbStatusTable.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "Status", true, DataSourceUpdateMode.Never));
+
+        }
         void AddAccountBinding()
         {
             tbAccountAccount.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "UserName", true, DataSourceUpdateMode.Never));
             tbNameAccount.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "DisplayName", true, DataSourceUpdateMode.Never));
             cbAccountType.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "Type", true, DataSourceUpdateMode.Never));
+        }
+        void addCategoryBinding()
+        {
+            tbIDCategory.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "ID", true, DataSourceUpdateMode.Never));
+            tbNameCategory.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "Name", true, DataSourceUpdateMode.Never));
+
         }
         void LoadCategoryIntoCombobox(ComboBox cb)
         {
@@ -374,8 +389,10 @@ namespace CoffeeManagement
 
         private void f_Admin_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'QuanLyQuanCafeDataSet.USP_GetListBill' table. You can move, or remove it, as needed.
+            this.USP_GetListBillTableAdapter.Fill(this.QuanLyQuanCafeDataSet.USP_GetListBill);
             // TODO: This line of code loads data into the 'QuanLyQuanCafeDataSet.USP_Tablefood' table. You can move, or remove it, as needed.
-            this.USP_TablefoodTableAdapter.Fill(this.QuanLyQuanCafeDataSet.USP_Tablefood);
+            // this.USP_TablefoodTableAdapter.Fill(this.QuanLyQuanCafeDataSet.USP_Tablefood);
 
 
             this.reportViewer1.RefreshReport();
@@ -400,6 +417,40 @@ namespace CoffeeManagement
                 MessageBox.Show("thất bại");
             }
           
+        }
+
+        private void btnEditTable_Click(object sender, EventArgs e)
+        {
+            string name = tbNameTable.Text;
+            int id = Convert.ToInt32(tbIdTable.Text);
+
+            TableDAO.Instance.EditTable(name, id);
+            MessageBox.Show("Sửa ban thành công");
+            LoadTable();
+        }
+
+        private void btnEditCategory_Click(object sender, EventArgs e)
+        {
+            string name = tbNameCategory.Text;
+            //int categoryID = (cbCategoryFood.SelectedItem as Category).ID;
+            //float price = (float)nmPriceFood.Value;
+            int id = Convert.ToInt32(tbIDCategory.Text);
+
+            if (CategoryDAO.Instance.editCategory(name,id))
+            {
+                MessageBox.Show("thành công");
+                LoadCategory();
+              
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi");
+            }
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

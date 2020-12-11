@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.USP_TablefoodBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.QuanLyQuanCafeDataSet = new CoffeeManagement.QuanLyQuanCafeDataSet();
             this.tcRoot = new System.Windows.Forms.TabControl();
             this.tcBill = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -114,12 +113,13 @@
             this.tbAccountAccount = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.Report = new System.Windows.Forms.TabPage();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataSet1 = new CoffeeManagement.DataSet1();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.USP_TablefoodTableAdapter = new CoffeeManagement.QuanLyQuanCafeDataSetTableAdapters.USP_TablefoodTableAdapter();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.QuanLyQuanCafeDataSet = new CoffeeManagement.QuanLyQuanCafeDataSet();
+            this.USP_GetListBillBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.USP_GetListBillTableAdapter = new CoffeeManagement.QuanLyQuanCafeDataSetTableAdapters.USP_GetListBillTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.USP_TablefoodBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).BeginInit();
             this.tcRoot.SuspendLayout();
             this.tcBill.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -160,17 +160,13 @@
             this.Report.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // USP_TablefoodBindingSource
             // 
             this.USP_TablefoodBindingSource.DataMember = "USP_Tablefood";
-            this.USP_TablefoodBindingSource.DataSource = this.QuanLyQuanCafeDataSet;
-            // 
-            // QuanLyQuanCafeDataSet
-            // 
-            this.QuanLyQuanCafeDataSet.DataSetName = "QuanLyQuanCafeDataSet";
-            this.QuanLyQuanCafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tcRoot
             // 
@@ -502,6 +498,7 @@
             // 
             // btnViewCategory
             // 
+            this.btnViewCategory.Enabled = false;
             this.btnViewCategory.Location = new System.Drawing.Point(291, 3);
             this.btnViewCategory.Name = "btnViewCategory";
             this.btnViewCategory.Size = new System.Drawing.Size(75, 47);
@@ -517,9 +514,11 @@
             this.btnEditCategory.TabIndex = 2;
             this.btnEditCategory.Text = "Edit";
             this.btnEditCategory.UseVisualStyleBackColor = true;
+            this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
             // 
             // btnDelCategory
             // 
+            this.btnDelCategory.Enabled = false;
             this.btnDelCategory.Location = new System.Drawing.Point(107, 4);
             this.btnDelCategory.Name = "btnDelCategory";
             this.btnDelCategory.Size = new System.Drawing.Size(75, 47);
@@ -641,13 +640,13 @@
             // 
             // btnEditTable
             // 
-            this.btnEditTable.Enabled = false;
             this.btnEditTable.Location = new System.Drawing.Point(200, 3);
             this.btnEditTable.Name = "btnEditTable";
             this.btnEditTable.Size = new System.Drawing.Size(75, 47);
             this.btnEditTable.TabIndex = 2;
             this.btnEditTable.Text = "Edit";
             this.btnEditTable.UseVisualStyleBackColor = true;
+            this.btnEditTable.Click += new System.EventHandler(this.btnEditTable_Click);
             // 
             // btnDelTable
             // 
@@ -949,18 +948,6 @@
             this.Report.Text = "Report";
             this.Report.UseVisualStyleBackColor = true;
             // 
-            // reportViewer1
-            // 
-            reportDataSource3.Name = "DataSet";
-            reportDataSource3.Value = this.USP_TablefoodBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CoffeeManagement.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(-4, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(782, 405);
-            this.reportViewer1.TabIndex = 0;
-            // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "DataSet1";
@@ -971,9 +958,31 @@
             this.dataSet1BindingSource.DataSource = this.dataSet1;
             this.dataSet1BindingSource.Position = 0;
             // 
-            // USP_TablefoodTableAdapter
+            // reportViewer1
             // 
-            this.USP_TablefoodTableAdapter.ClearBeforeFill = true;
+            reportDataSource1.Name = "DataSet";
+            reportDataSource1.Value = this.USP_GetListBillBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "CoffeeManagement.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(782, 246);
+            this.reportViewer1.TabIndex = 0;
+            // 
+            // QuanLyQuanCafeDataSet
+            // 
+            this.QuanLyQuanCafeDataSet.DataSetName = "QuanLyQuanCafeDataSet";
+            this.QuanLyQuanCafeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // USP_GetListBillBindingSource
+            // 
+            this.USP_GetListBillBindingSource.DataMember = "USP_GetListBill";
+            this.USP_GetListBillBindingSource.DataSource = this.QuanLyQuanCafeDataSet;
+            // 
+            // USP_GetListBillTableAdapter
+            // 
+            this.USP_GetListBillTableAdapter.ClearBeforeFill = true;
             // 
             // f_Admin
             // 
@@ -985,7 +994,6 @@
             this.Text = "Admin";
             this.Load += new System.EventHandler(this.f_Admin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.USP_TablefoodBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).EndInit();
             this.tcRoot.ResumeLayout(false);
             this.tcBill.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -1039,6 +1047,8 @@
             this.Report.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyQuanCafeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.USP_GetListBillBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1129,9 +1139,10 @@
         private System.Windows.Forms.TabPage Report;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource dataSet1BindingSource;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource USP_TablefoodBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource USP_GetListBillBindingSource;
         private QuanLyQuanCafeDataSet QuanLyQuanCafeDataSet;
-        private QuanLyQuanCafeDataSetTableAdapters.USP_TablefoodTableAdapter USP_TablefoodTableAdapter;
+        private QuanLyQuanCafeDataSetTableAdapters.USP_GetListBillTableAdapter USP_GetListBillTableAdapter;
     }
 }

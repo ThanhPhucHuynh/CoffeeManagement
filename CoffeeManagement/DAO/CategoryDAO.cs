@@ -42,7 +42,12 @@ namespace CoffeeManagement.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
-
+        public bool editCategory(string name,int id)
+        {
+          //  string query = string.Format("INSERT dbo.FoodCategory ( name ) VALUES  ( N'{0}')", name);
+            int result = DataProvider.Instance.ExecuteNonQuery("update FoodCategory  set name = '"+name+"' where id="+id);
+            return result > 0;
+        }
         public Category GetCategoryByID(int id)
         {
             Category category = null;

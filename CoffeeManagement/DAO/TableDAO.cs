@@ -42,12 +42,18 @@ namespace CoffeeManagement.DAO
         }
         public bool InsertTable(string name)
         {
-           // string status = "Trống";
+            // string status = "Trống";
             //string query = string.Format("exec USP_InsertTable @name", new object[] { name });
             int result = DataProvider.Instance.ExecuteNonQuery("exec USP_InsertTable @name", new object[] { name });
 
             return result > 0;
         }
+        public void EditTable(string name,int id)
+        {
+            // string status = "Trống";
+            //string query = string.Format("exec USP_InsertTable @name", new object[] { name });
+            int result = DataProvider.Instance.ExecuteNonQuery("update TableFood  set name = N'"+name+"' where id="+id);
 
+        }
     }
 }
